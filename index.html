@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Mathias Perlet - About Me</title>
+    <title>Blog - Mathias Perlet</title>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="application-name" content="mperlet.de" />
@@ -46,19 +46,39 @@
 </head>
 
 <body>
-    <a href="#"><button class="btn btn-info btn-lg btn-block"><strong>&#8962; Home</strong></button></a>
-    <div class="container-fluid"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <a href="#">
+                    <button class="btn btn-info btn-lg btn-block">
+                        <strong>&#8962; Blog-Home</strong>
+                    </button>
+                </a>
+            </div>
+            <div class="col-xs-6">
+                <a href="http://mperlet.de">
+                    <button class="btn btn-success btn-lg btn-block">
+                        <strong>&#8962; mperlet.de</strong>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container" id="content"></div>
+        </div>
+    </div>
+
 <script type="text/javascript">
-var info_array = [];
+var articles = [];
 
 function xhr_md(url) {
     $.ajax({
             url: url,
             success: function(mdText) {
-                $(".container-fluid").html(markdown.toHTML(mdText));
+                $("#content").html(markdown.toHTML(mdText));
             },
             error: function(error) {
-                $(".container-fluid").text(
+                $("#content").text(
                     "Diesen Artikel gibt es leider nicht.");
             }
     });
@@ -66,29 +86,45 @@ function xhr_md(url) {
 
 
 
-function responseParse(info_array) {
-    $(".container-fluid").html("");
-    for(i = 0; i < info_array.length;i++){
-        if(location.hash === ("#!" + info_array[i].hash)) {
-            xhr_md(info_array[i].filename);
+function responseParse(articles) {
+    $("#content").html("");
+    document.title = 'Blog - Mathias Perlet';
+
+    for(i = 0; i < articles.length;i++){
+        if(location.hash === ("#!" + articles[i].hash)) {
+            xhr_md(articles[i].filename);
+            document.title = articles[i].title;
         } else {
-            $(".container-fluid").append(
-                '<a href="#!' + info_array[i].hash +  '"><h1>' +
-                info_array[i].title + '</h1></a>');
+            $("#content").append(
+                '<blockquote>'
+                + '<a href="#!' + articles[i].hash +  '">'
+                    + '<h3>' + articles[i].title + '</h3>'
+                + '</a>'
+                + '<footer>'
+                    + 'Veröffentlicht: ' + articles[i].published
+                    + ',<cite> ' + articles[i].author + '</cite>'
+                    + '</footer>'
+                + '</blockquote>');
         }
     }
 
 }
 
 $(window).on('hashchange', function() {
-  responseParse(info_array);
+  responseParse(articles);
 });
 
+function sortResponseByDate(a,b) {
+    return new Date(b.published.split('.').reverse().join('-')) -
+           new Date(a.published.split('.').reverse().join('-'));
+}
+
 function blogManifestResponse(response) {
-    info_array = response;
-    responseParse(info_array);
+
+    articles = response.sort(sortResponseByDate);
+    responseParse(articles);
 }
 </script>
-    <script src="manifest.js"></script>
+<script src="manifest.js"></script>
 </body>
 </html>
