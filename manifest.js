@@ -8,11 +8,11 @@ blogManifestResponse(
             "published": "26.06.2014"
         },
         {
-            "title": "Neue Blog Software",
+            "title": "Eigene, neue Blog-Engine",
             "filename": "article/neuer_blog.md",
             "hash": "neuer_blog",
             "author": "Mathias Perlet",
-            "published": "25.08.2015"
+            "published": "03.10.2015"
         },
     ]
 );
