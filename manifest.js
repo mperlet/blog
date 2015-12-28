@@ -1,6 +1,13 @@
 blogManifestResponse(
     [
         {
+            "title": "10 interessante Links [Part 01]",
+            "filename": "article/links_part_01.md",
+            "hash": "links_part_01",
+            "author": "Mathias Perlet",
+            "published": "28.12.2015"
+        },
+        {
             "title": "LaTeX: hilfreiche Einzeiler",
             "filename": "article/latex_einzeiler.md",
             "hash": "latex_einzeiler",
