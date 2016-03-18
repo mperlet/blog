@@ -1,6 +1,13 @@
 blogManifestResponse(
     [
         {
+            "title": "G-Docs Diagramme verlustfrei exportieren",
+            "filename": "article/gdocs_chart_lossless.md",
+            "hash": "gdocs_chart_lossless",
+            "author": "Mathias Perlet",
+            "published": "18.03.2016"
+        },
+        {
             "title": "10 interessante Links [Part 01]",
             "filename": "article/links_part_01.md",
             "hash": "links_part_01",
