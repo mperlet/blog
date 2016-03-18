@@ -6,9 +6,9 @@ Der Vorteil ist, dass hier keine Rasterung vorgenommen wird, die Grafiken sind a
 ### Schritt 1
 
 Tabelle mit Diagramm in Google-Docs öffnen und die Developer Console öffnen (STRG+SHIFT+I). Dann unter *Elements* das `<svg>`-Tag suchen und markieren. Das Kästchen links oben kann bei der suche helfen.
-![](https://dl.dropboxusercontent.com/content_link/ENSN4sZervgnadb9fXIXVXggq7VaeEeAo7nw57TWbVCryQYbaHWAky9PJu2uxboJ/file)
+![](https://www.dropbox.com/s/sufwg62lh51lpxx/gdocs_chart.png?dl=0&raw=1)
 
-Das markierte Tag in die Zwischenablage kopieren (STRG+C) und in einen beliebigen Editor einfügen. 
+Das markierte Tag in die Zwischenablage kopieren (STRG+C) und in einen beliebigen Editor einfügen.
 
 ### Schritt 2
 
