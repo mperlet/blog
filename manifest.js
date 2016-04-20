@@ -1,6 +1,13 @@
 blogManifestResponse(
     [
         {
+            "title": "Gnome 3 und .Xmodmap-Autostart",
+            "filename": "article/gnome3_and_xmodmap.md",
+            "hash": "gnome3_and_xmodmap",
+            "author": "Mathias Perlet",
+            "published": "20.04.2016"
+        },
+        {
             "title": "G-Docs Diagramme verlustfrei exportieren",
             "filename": "article/gdocs_chart_lossless.md",
             "hash": "gdocs_chart_lossless",
