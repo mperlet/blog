@@ -50,3 +50,10 @@ Setzt die Außenabstände für Dokumente, wird im Dokumenden Header gesetzt.
     \addtocontents{toc}{\protect\enlargethispage{1cm}}
 
 Vergrößert das Inhaltsverzeichnis um 1cm, hilfreich wenn  eins, zwei Zeilen auf die nächste Seite rutschen.
+
+### Tiefe des Inhaltsverzeinis ändern
+
+    \setcounter{tocdepth}{2}
+
+Die 2 zeigt im Inhaltsverzeichnis Kapitel, Sections und Sub-Sections an. Eine 3 würde zusätzlich Sub-Sub-Sections anzeigen.
+
